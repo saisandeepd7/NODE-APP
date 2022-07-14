@@ -7,7 +7,7 @@
 // import {moviesRouter} from "./routes/movies.js";
 // import cors from "cors";
  dotenv.config();
-console.log(process.env.MONGO_URL)
+
  const app = express();
 const PORT= 4000;
 // const movies=[
