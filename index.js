@@ -5,7 +5,7 @@
  import { MongoClient } from 'mongodb';
  import dotenv from "dotenv";
 import {moviesRouter} from "./routes/movies.js";
-// import cors from "cors";
+ import cors from "cors";
  dotenv.config();
  
  const app = express();
@@ -80,7 +80,7 @@ const PORT= process.env.PORT;
 //     ]
 //This will intercept all the requests and convert body to json format.
      app.use(express.json());
-    // app.use(cors());
+     app.use(cors());
 
       //const MONGO_URL="mongodb://127.0.0.1"
       
