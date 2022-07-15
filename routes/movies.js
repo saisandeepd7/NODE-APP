@@ -1,10 +1,11 @@
 import express from "express"
+import { auth } from "../middleware/auth.js"
 const router=express.Router()
 import { getallmovies, getmoviebyid, addmovie, deletemovie, editmovie } from "./helper.js"
 
 
 
-router.get("/",async function(req,res){
+router.get("/",auth,async function(req,res){
     if(req.query.rating){
       req.query.rating=+req.query.rating
     }
@@ -22,7 +23,7 @@ router.get("/",async function(req,res){
     console.log(movie)
     movie ? res.send(movie) : res.status(404).send({msg:"movies not found"})
   })
-    router.post("/",async function(req,res){
+    router.post("/",auth,async function(req,res){
       const data=req.body
       console.log(data)
     
@@ -30,7 +31,7 @@ router.get("/",async function(req,res){
      res.send(result)
    })
   
-   router.delete("/:id",async function(req,res){
+   router.delete("/:id",auth,async function(req,res){
     const { id }=req.params
     console.log(req.params,id)
    

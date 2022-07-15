@@ -15,3 +15,11 @@ export async function getmoviebyid(id) {
 export async function getallmovies(req) {
     return await client.db("NODE-APP").collection("movies").find(req.query).toArray();
 }
+
+export async function createUser(data){
+    return await client.db("NODE-APP").collection("users").insertOne(data); 
+}
+
+export async function getuserByName(username) {
+    return await client.db("NODE-APP").collection("users").findOne({ username: username});
+}
