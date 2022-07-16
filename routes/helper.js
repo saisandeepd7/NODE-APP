@@ -23,3 +23,5 @@ export async function createUser(data){
 export async function getuserByName(username) {
     return await client.db("NODE-APP").collection("users").findOne({ username: username});
 }
+
+

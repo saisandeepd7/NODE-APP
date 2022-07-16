@@ -53,6 +53,8 @@ router.get("/",auth,async function(req,res){
     res.send(result)
     
    })
+
+   
   
    export const moviesRouter=router
 
